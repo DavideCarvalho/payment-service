@@ -27,6 +27,8 @@ Esse projeto possui 3 rotas:
 Cada endpoint tem sua explicação de headers, body e query strings necessários no Swagger, que se encontra em ``/api``
 
 #Segurança
+> Podem usar o seguinte token caso queiram, ele da acesso a todas as roles: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMzQ1Njc4OTAiLCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE1MTYyMzkwMjIsInJvbGVzIjpbIkdFVF9UUkFOU0FDVElPTlMiLCJHRVRfUEFZQUJMRVMiLCJDUkVBVEVfTkVXX1RSQU5TQUNUSU9OIl19.bvbqRAnrR19PiZ7wjM9s4s-tq1DQCceZTALBkspDMcA
+
 Cada endpoint tem uma role associada, então para que as requisições
 funcionem, você precisa de um JWT com um array chamado ``roles``,
 e dentro dele ter as strings com as roles necessárias para cada endpoint,
