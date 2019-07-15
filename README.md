@@ -73,7 +73,6 @@ variável de ambiente ``PRODUCTION`` não seja colocada ou seja ``false``
 
 #Melhorias
 Existem algumas melhorias possíveis, como:
-- Testes de integração - De preferência, sem mocks de banco, utilizando um banco de dados para desenvolvimento
 - Criar endpoint de segurança para geração de token
 - Lógica de refresh token
 - Criação e vinculação de usuários nas transações
