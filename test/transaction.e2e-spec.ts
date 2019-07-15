@@ -14,7 +14,7 @@ describe('PharmacyController (e2e)', () => {
     await app.init();
   });
 
-  it('/transaction (GET)', () => {
+  it('should add one more transaction into the database', () => {
     let size;
     return request(app.getHttpServer())
       .get('/transaction')
