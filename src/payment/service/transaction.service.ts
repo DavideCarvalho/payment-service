@@ -18,8 +18,13 @@ export class TransactionService {
 
   public async createNewTransaction(transaction: TransactionDTO): Promise<TransactionDTO> {
     return this.entityManager.transaction(async transactionalManager => {
+      const cardNumberLength = transaction.cardNumber.length;
+      const transactionWithLastFourCardNumbers: TransactionDTO = {
+        ...transaction,
+        cardNumber: transaction.cardNumber.substring(cardNumberLength - 4, cardNumberLength)
+      };
       const savedTransaction: Transaction = await transactionalManager.save(
-        plainToClass<Transaction, TransactionDTO>(Transaction, transaction),
+        plainToClass<Transaction, TransactionDTO>(Transaction, transactionWithLastFourCardNumbers),
       );
       const payable = new PayableDTO(transaction.paymentMethod, transaction.transactionValue);
       await this.payableService.createPayable(payable);

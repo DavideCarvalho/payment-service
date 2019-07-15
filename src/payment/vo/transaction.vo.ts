@@ -17,8 +17,8 @@ export class TransactionVO {
 
   @IsNotEmpty()
   @IsString()
-  @Length(4, 4)
-  @ApiModelProperty({ type: String, exclusiveMinimum: 4, exclusiveMaximum: 4 })
+  @Length(16, 16)
+  @ApiModelProperty({ type: String, exclusiveMinimum: 16, exclusiveMaximum: 16 })
   cardNumber: string;
 
   @IsNotEmpty()
